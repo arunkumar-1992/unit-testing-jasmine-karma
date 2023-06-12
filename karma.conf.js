@@ -33,7 +33,7 @@ module.exports = function (config) {
       ]
     },
     process.env: {
-      CHROME_BIN: '/usr/bin/chromium',
+      CHROME_BIN: '/usr/bin/chromium-browser',
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
