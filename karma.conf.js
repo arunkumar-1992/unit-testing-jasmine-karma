@@ -32,6 +32,9 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
+    process.env: {
+      CHROME_BIN: '/usr/bin/chromium',
+    },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
