@@ -32,23 +32,22 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    process.env: {
-      CHROME_BIN: '/usr/bin/chromium-browser',
-    },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['MyChromeHeadless'], // <- not 'ChromeHeadless'
-  customLaunchers: {
-    MyChromeHeadless: {
-      base: "Chrome",
+    browsers: ['ChromeHeadless'],
+    customLaunchers: {
+      ChromeHeadless: {
+        base: 'Chrome',
         flags: [
-          "--headless", 
-        ]
+          '--headless',
+          '--disable-gpu',
+          // Add any additional flags as needed
+        ],
+      },
     },
-  },
     singleRun: false,
     restartOnFileChange: true
   });
