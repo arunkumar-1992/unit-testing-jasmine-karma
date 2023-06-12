@@ -3,7 +3,7 @@
 
 module.exports = function (config) {
   config.set({
-    basePath: '/data/repo',
+    basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
@@ -43,10 +43,10 @@ module.exports = function (config) {
     browsers: ['MyChromeHeadless'], // <- not 'ChromeHeadless'
   customLaunchers: {
     MyChromeHeadless: {
-      base: 'ChromeHeadless',
-      flags: [
-        '--no-sandbox'
-      ],
+      base: "Chrome",
+        flags: [
+          "--headless", 
+        ]
     },
   },
     singleRun: false,
